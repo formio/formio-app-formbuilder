@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fa fa-file-text-o"></i>
+          <span>Forms</span>
+          <a class="pull-right" href="http://help.form.io/userguide/#forms" target="_blank"><i class="glyphicon glyphicon-question-sign "></i></a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <div class="well">
+          Below are all the forms available for your application. You can either edit an existing form, or create a new one by click on the <strong>New Form</strong> button.
+        </div>
+        <span class="glyphicon glyphicon-refresh glyphicon-spin" style="font-size: 2em;" ng-if="loading"></span>
+        <table class="table table-striped">
+          <tbody>
+          <tr data-ng-repeat="form in forms">
+            <td>
+              <div class="row">
+                <div class="col-sm-8">
+                  <a ui-sref="form.view({formId: form._id})"><h5>{{ form.title }}</h5></a>
+                </div>
+                <div class="col-sm-4">
+                  <div class="button-group pull-right" style="display:flex;">
+                    <a ui-sref="form.edit({formId: form._id})" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit</a>&nbsp;
+                    <a ui-sref="form.delete({formId: form._id, formType: 'form'})" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-trash"></span></a>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <bgf-pagination
+          collection="forms"
+          url="formsUrl"
+          per-page="formsPerPage"
+          template-url="./views/partials/pager.html"
+        ></bgf-pagination>
+      </div>
+      <div class="panel-footer text-right">
+        <a ui-sref="createForm({formType: 'form'})" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> New Form</a>
+      </div>
+    </div>
+  </div>
+</div>
