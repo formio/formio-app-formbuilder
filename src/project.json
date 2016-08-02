@@ -1,11 +1,11 @@
 {
-  "title": "Form Portal",
-  "name": "form-portal",
+  "title": "Form Builder",
+  "name": "form-builder",
   "version": "2.0.0",
-  "description": "Provides a usable portal for managing and building forms.",
+  "description": "Provides a usable app for managing and building forms.",
   "preview": {
-    "url": "https://app.form.io/formio-app-formportal/dist",
-    "repo": "https://github.com/formio/formio-app-formportal"
+    "url": "https://app.form.io/formio-app-formbuilder/dist",
+    "repo": "https://github.com/formio/formio-app-formbuilder"
   },
   "roles": {
     "administrator": {

@@ -1,5 +1,11 @@
-The main Form.io front-end application.
+A form building application.
 ---------------------------------
+
+Overview
+--------
+
+This Application is designed to demonstrate and provide a framework for a web app that does two things. First, it allows administrators to log in and create, update, and delete forms within the application. Second, it allows users to log in, view the list of forms, and fill out the forms. Administrators can also view all submissions from the users. 
+
 
 Installation
 --------------
