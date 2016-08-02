@@ -1,6 +1,8 @@
 @import "bower_components/bootswatch/yeti/_variables.scss";
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import "bower_components/bootswatch/yeti/_bootswatch.scss";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+@import "bower_components/font-awesome/scss/font-awesome";
 
 .browsehappy {
   margin: 0.2em 0;
@@ -16,4 +18,14 @@
 .logo img {
   height: 30px;
   margin-top: -3px;
+}
+
+a:focus {
+  outline: none;
+}
+
+.form-field-type-icons {
+  i {
+    margin: 5px;
+  }
 }
