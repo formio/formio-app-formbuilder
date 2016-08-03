@@ -16,6 +16,7 @@
           group: 'custom',
           icon: 'fa fa-smile-o',
           settings: {
+            input: true,
             icons: [
               {
                 value: 5,
@@ -52,7 +53,7 @@
             },
             {
               name: 'Validation',
-              template: 'formio/components/signature/validate.html'
+              template: 'formio/components/icons/validate.html'
             },
             {
               name: 'API',
