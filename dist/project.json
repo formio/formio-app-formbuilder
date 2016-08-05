@@ -428,5 +428,14 @@
         "association": "new"
       }
     }
-  }
+  },
+  "access": [
+    {
+      "type": "read_all",
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    }
+  ]
 }

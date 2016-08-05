@@ -8,7 +8,6 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <link href='https://fonts.googleapis.com/css?family=Vast+Shadow' rel='stylesheet' type='text/css'>
-    <script src="https://maps.google.com/maps/api/js"></script>
     <script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>
 
     <!-- build:css({.tmp/serve,src}) styles/app.css -->
@@ -40,8 +39,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li ng-if="isAdmin" ng-class="{active: isActive('home')}"><a ui-sref="home"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Forms</a></li>
-            <li ng-if="isAdmin" ng-class="{active: isActive('users.userIndex')}"><a ui-sref="users.userIndex()"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users</a></li>
+            <li ng-class="{active: isActive('home')}"><a ui-sref="home"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Forms</a></li>
+            <li ng-if="isAdministrator" ng-class="{active: isActive('users.userIndex')}"><a ui-sref="users.userIndex()"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li ng-if="authenticated"><a href="#" ng-click="logout()"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Logout</a></li>
