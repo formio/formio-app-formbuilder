@@ -4,6 +4,6 @@
   <li role="presentation" ng-if="isAdministrator || hasAccess(form.name, ['read_own', 'read_all'])" ng-class="{active:isActive('form.submission')}"><a ui-sref="form.submission.index()">View Data</a></li>
   <li role="presentation" ng-if="isAdministrator" ng-class="{active:isActive('form.edit')}"><a ui-sref="form.edit()">Edit Form</a></li>
   <li role="presentation" ng-if="isAdministrator" ng-class="{active:isActive('form.action')}"><a ui-sref="form.action.index()">Form Actions</a></li>
-  <li role="presentation" ng-if="isAdministrator" ng-class="{active:isActive('form.permission')}"><a ui-sref="form.permission()">Permissions</a></li>
+  <li role="presentation" ng-if="isAdministrator" ng-class="{active:isActive('form.permission')}"><a ui-sref="form.permission()">Access</a></li>
 </ul>
 <div ui-view></div>
