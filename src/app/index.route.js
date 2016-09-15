@@ -419,6 +419,12 @@
           FormioAlerts.onError(error);
         });
 
+        $scope.$on('rowView', function (event, submission) {
+          $state.go('form.submission.item.view', {
+            subId: submission._id
+          });
+        });
+
         $scope.$on('submissionView', function(event, submission) {
           $state.go('form.submission.item.view', {
             subId: submission._id

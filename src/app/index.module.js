@@ -10,7 +10,6 @@
       'ngFormioHelper',
       'ngFormBuilder',
       'bgf.paginateAnything',
-      'formio',
-      'ngMap'
+      'formio'
     ]);
 })();

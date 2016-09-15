@@ -1,4 +1,4 @@
-var APP_URL = 'https://myapp.form.io';
+var APP_URL = 'https://chgiqgppalnebih.form.io';
 var API_URL = 'https://api.form.io';
 
 // Parse query string
