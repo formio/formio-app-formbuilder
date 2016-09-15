@@ -13,7 +13,7 @@ You can easily get this application running by typing the following in your comm
 
 ```
 npm install -g formio-cli
-formio bootstrap formio/formio-app-formportal
+formio bootstrap formio/formio-app-formbuilder
 ```
 
 Next you will need to create an Admin account by logging into your Form.io account and then creating a new

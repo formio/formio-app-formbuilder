@@ -129,7 +129,11 @@
         $scope.formUrl = AppConfig.appUrl + '/form';
         $scope.appUrl = AppConfig.appUrl;
         $scope.formUrl += $stateParams.formId ? ('/' + $stateParams.formId) : '';
-        $scope.form = {components:[], type: ($stateParams.formType ? $stateParams.formType : 'form'), tags: ['common']};
+        $scope.form = {
+          components:[],
+          type: ($stateParams.formType ? $stateParams.formType : 'form'),
+          tags: ['common']
+        };
         $scope.formio = new Formio($scope.formUrl);
 
         // Load the form if the id is provided.
@@ -137,6 +141,36 @@
           $scope.formio.loadForm().then(function(form) {
             $scope.form = form;
           }, FormioAlerts.onError.bind(FormioAlerts));
+        }
+        else {
+          // Load the roles available.
+          if (!$scope.form.submissionAccess) {
+            Formio.makeStaticRequest(Formio.getAppUrl() + '/role').then(function(roles) {
+              angular.forEach(roles, function(role) {
+                if (!role.admin && !role.default) {
+                  // Add access to the form being created to allow for authenticated people to create their own.
+                  $scope.form.submissionAccess = [
+                    {
+                      type: 'create_own',
+                      roles: [role._id]
+                    },
+                    {
+                      type: 'read_own',
+                      roles: [role._id]
+                    },
+                    {
+                      type: 'update_own',
+                      roles: [role._id]
+                    },
+                    {
+                      type: 'delete_own',
+                      roles: [role._id]
+                    }
+                  ];
+                }
+              });
+            });
+          }
         }
 
         // Match name of form to title if not customized.

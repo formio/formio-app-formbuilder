@@ -38,8 +38,8 @@
           <a class="navbar-brand logo" href="#" onclick="window.location.reload(true)">Form Builder</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li ng-class="{active: isActive('home')}"><a ui-sref="home"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Forms</a></li>
+          <ul class="nav navbar-nav" ng-cloak>
+            <li ng-if="authenticated" ng-class="{active: isActive('home')}"><a ui-sref="home"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Forms</a></li>
             <li ng-if="isAdministrator" ng-class="{active: isActive('users.userIndex')}"><a ui-sref="users.userIndex()"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -49,7 +49,7 @@
       </div><!--/.container -->
     </nav>
     <div class="container">
-      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" ng-bind-html="alert.message"></uib-alert>
+      <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)" ng-bind-html="alert.message"></div>
       <div ui-view></div>
     </div>
 
