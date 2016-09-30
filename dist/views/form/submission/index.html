@@ -1,8 +1,0 @@
-<div class="well submissions-header">
-  <a class="btn btn-default" href="{{ formio.formUrl }}/export?format=json&x-jwt-token={{ token }}">Export JSON</a>
-  <a class="btn btn-default" href="{{ formio.formUrl }}/export?format=csv&x-jwt-token={{ token }}">Export CSV</a>
-</div>
-<div class="well" ng-if="isAdministrator">
-  To control which fields show up in this table, use the "Table View" setting on each field under "Edit Form".
-</div>
-<formio-grid src="formUrl"></formio-grid>

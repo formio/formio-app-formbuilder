@@ -7,9 +7,9 @@
       'ui.bootstrap',
       'ui.bootstrap.accordion',
       'ui.bootstrap.alert',
+      'formio',
       'ngFormioHelper',
       'ngFormBuilder',
-      'bgf.paginateAnything',
-      'formio'
+      'ngFormBuilderHelper'
     ]);
 })();

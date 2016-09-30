@@ -1,9 +1,0 @@
-<h2>{{form.title}}</h2>
-<ul class="nav nav-tabs">
-  <li role="presentation" ng-if="isAdministrator || hasAccess(form.name, ['create_own', 'create_all'])" ng-class="{active:isActive('form.view')}"><a ui-sref="form.view()">Enter Data</a></li>
-  <li role="presentation" ng-if="isAdministrator || hasAccess(form.name, ['read_own', 'read_all'])" ng-class="{active:isActive('form.submission')}"><a ui-sref="form.submission.index()">View Data</a></li>
-  <li role="presentation" ng-if="isAdministrator" ng-class="{active:isActive('form.edit')}"><a ui-sref="form.edit()">Edit Form</a></li>
-  <li role="presentation" ng-if="isAdministrator" ng-class="{active:isActive('form.action')}"><a ui-sref="form.action.index()">Form Actions</a></li>
-  <li role="presentation" ng-if="isAdministrator" ng-class="{active:isActive('form.permission')}"><a ui-sref="form.permission()">Access</a></li>
-</ul>
-<div ui-view></div>

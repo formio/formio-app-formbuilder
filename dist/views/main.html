@@ -13,41 +13,6 @@
       <a ui-sref="createForm({formType: 'form'})" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>
         Create New Form</a>
     </div>
-    <span class="glyphicon glyphicon-refresh glyphicon-spin" style="font-size: 2em;" ng-if="loading"></span>
-    <table class="table table-striped">
-      <tbody>
-      <tr data-ng-repeat="form in forms" ng-if="isAdministrator || hasAccess(form.name, ['create_own', 'create_all', 'read_all', 'create_own'])">
-        <td>
-          <div class="row">
-            <div class="col-sm-8">
-              <a ui-sref="form.view({formId: form._id})"><h5>{{ form.title }}</h5></a>
-            </div>
-            <div class="col-sm-4">
-              <div class="button-group pull-right" style="display:flex;">
-                <a ng-if="isAdministrator || hasAccess(form.name, ['create_own', 'create_all'])" ui-sref="form.view({formId: form._id})" class="btn btn-default btn-xs">
-                  <span class="glyphicon glyphicon-pencil"></span> Enter Data
-                </a>&nbsp;
-                <a ng-if="isAdministrator || hasAccess(form.name, ['read_all', 'create_own'])" ui-sref="form.submission.index({formId: form._id})" class="btn btn-default btn-xs">
-                  <span class="glyphicon glyphicon-list-alt"></span> View Data
-                </a>&nbsp;
-                <a ng-if="isAdministrator" ui-sref="form.edit({formId: form._id})" class="btn btn-default btn-xs">
-                  <span class="glyphicon glyphicon-edit"></span> Edit Form
-                </a>&nbsp;
-                <a ng-if="isAdministrator" ui-sref="form.delete({formId: form._id, formType: 'form'})" class="btn btn-default btn-xs">
-                  <span class="glyphicon glyphicon-trash"></span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-    <bgf-pagination
-      collection="forms"
-      url="formsUrl"
-      per-page="formsPerPage"
-      template-url="./views/partials/pager.html"
-    ></bgf-pagination>
+    <div ng-include="'formio-helper/formbuilder/index.html'"></div>
   </div>
 </div>
