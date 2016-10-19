@@ -9,10 +9,6 @@
         If your users aren't seeing the forms, be sure to give them permissions on the form's Permissions tab. A typical use case is to give the "Authenticated" role the "Create Own Submission" and "Read Own Submission" permissions.
       </p>
     </div>
-    <div style="margin-bottom: 10px;" ng-if="isAdministrator">
-      <a ui-sref="createForm({formType: 'form'})" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>
-        Create New Form</a>
-    </div>
     <div ng-include="'formio-helper/formbuilder/index.html'"></div>
   </div>
 </div>
