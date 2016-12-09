@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "description": "Provides a usable app for managing and building forms.",
   "preview": {
-    "url": "https://app.form.io/formio-app-formbuilder/dist",
+    "url": "https://formio.github.io/formio-app-formbuilder/dist",
     "repo": "https://github.com/formio/formio-app-formbuilder"
   },
   "roles": {
